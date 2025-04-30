@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaGithub, FaLinkedin, FaInstagram, FaFileAlt } from "react-icons/fa";
 import HamburgerMenu from "../../components/hamburgerMenu";
 import { videos } from "../../data/videos";
 import { projects } from "../../data/projects";
@@ -10,7 +11,7 @@ export default function Home() {
       <HamburgerMenu />
 
       {/* Hero/Profile section */}
-      <section className="min-h-screen flex flex-col items-center justify-center p-6 pt-20 text-center">
+      <section id="home" className="min-h-screen flex flex-col items-center justify-center p-6 pt-20 text-center">
         <Image
           src="/default.png"
           alt="Profile Picture"
@@ -23,19 +24,32 @@ export default function Home() {
           i kinda code, film cool videos, eat, sleep, gym, work
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4 mt-6">
-          <Link href="https://github.com/kendrickngo2000" target="_blank" className="text-gray-700 hover:text-black">
-            Github
-          </Link>
-          <Link href="https://linkedin.com/in/kendrick-ngo-340107357" target="_blank" className="text-gray-700 hover:text-black">
-            LinkedIn
-          </Link>
-          <Link href="https://instagram.com/notkendrickngo/" target="_blank" className="text-gray-700 hover:text-black">
-            Instagram
-          </Link>
-          <Link href="/resume.pdf" target="_blank" className="text-gray-700 hover:text-black">
-            Resume
-          </Link>
+        {/* Social Media Links */}
+        <div className="flex flex-wrap justify-center gap-8 mt-6">
+          <div className="flex flex-col items-center">
+            <Link href="https://github.com/kendrickngo2000" target="_blank" className="text-gray-700 hover:text-black">
+              <FaGithub size={30} />
+            </Link>
+            <span className="text-sm text-gray-700 mt-2">github</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <Link href="https://linkedin.com/in/kendrick-ngo-340107357" target="_blank" className="text-gray-700 hover:text-black">
+              <FaLinkedin size={30} />
+            </Link>
+            <span className="text-sm text-gray-700 mt-2">linkedin</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <Link href="https://instagram.com/notkendrickngo/" target="_blank" className="text-gray-700 hover:text-black">
+              <FaInstagram size={30} />
+            </Link>
+            <span className="text-sm text-gray-700 mt-2">insta</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <Link href="/resume.pdf" target="_blank" className="text-gray-700 hover:text-black">
+              <FaFileAlt size={30} />
+            </Link>
+            <span className="text-sm text-gray-700 mt-2">resume</span>
+          </div>
         </div>
 
         {/* Save Contact Button */}
@@ -43,15 +57,15 @@ export default function Home() {
           <a
             href="/kendrick.vcf"
             download
-            className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-500 transition"
+            className="bg-gray-600 text-white px-6 py-3 rounded hover:bg-gray-500 transition"
           >
-            Save Contact
+            save contact
           </a>
         </div>
       </section>
 
       {/* Videos Section */}
-      <section className="min-h-screen bg-gray-100 p-6">
+      <section id="videos" className="min-h-screen bg-gray-100 p-6">
         <h1 className="text-3xl font-bold text-gray-800 text-center mb-10">videos</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {videos.map((video) => (
@@ -83,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="min-h-screen bg-gray-50 p-6">
+      <section id="projects" className="min-h-screen bg-gray-50 p-6">
         <h1 className="text-3xl font-bold text-gray-800 text-center mb-10">projects</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {projects.map((project) => (
@@ -104,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Posts Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center bg-white p-8">
+      <section id="posts" className="min-h-screen flex flex-col justify-center items-center bg-white p-8">
         <h2 className="text-3xl font-semibold mb-4">Posts</h2>
         <p className="text-gray-600 text-center max-w-xl">My thoughts, ideas, or lessons learned in tech and life.</p>
         {/* Replace with blog post previews */}
