@@ -1,11 +1,74 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaInstagram, FaFileAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaFileAlt, FaHeart } from "react-icons/fa";
+import { useEffect, useState } from "react";
 import HamburgerMenu from "../../components/hamburgerMenu";
 import { videos } from "../../data/videos";
 import { projects } from "../../data/projects";
 
+function downloadContact() {
+  const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:Kendrick Ngo
+TEL;TYPE=CELL:+1234567890
+END:VCARD`;
+  const blob = new Blob([vCard], { type: "text/vcard" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "kendrick.vcf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 export default function Home() {
+  const [showHeart, setShowHeart] = useState(false);
+  const [showGoodbye, setShowGoodbye] = useState(false);
+  const [destroyed, setDestroyed] = useState(false);
+
+  // if yes effect
+  useEffect(() => {
+    if (showHeart) {
+      const timeout = setTimeout(() => {
+        downloadContact();
+      }, 2000); // wait 2 seconds before downloading vcard
+      return () => clearTimeout(timeout);
+    }
+  }, [showHeart]);
+
+  // if yes
+  function handleYesClick() {
+    setShowHeart(true);
+    setTimeout(() => {
+      setShowHeart(false);
+    }, 4000);
+  }
+
+  // if no
+  function handleNoClick() {
+    setShowGoodbye(true);
+    document.body.classList.add("melt");
+    // effect
+    setTimeout(() => {
+      setDestroyed(true);
+    }, 4000);
+  }
+
+  // fade to black
+  if (destroyed) {
+    return (
+      <div className="fixed inset-0 bg-black flex items-center justify-center z-[9999]">
+        <div className="text-center text-white animate-fade-in">
+          <p className="text-5xl mb-4">:(</p>
+          <p className="text-2xl font-semibold">goodbye</p>
+          <p className="text-sm mt-4 text-gray-400">refresh to try again</p>
+          <p className="text-lg mt-6 text-white">"Thanks for visiting. See you next time!"</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-gray-100 text-gray-800">
       <HamburgerMenu />
@@ -123,6 +186,39 @@ export default function Home() {
         <p className="text-gray-600 text-center max-w-xl">My thoughts, ideas, or lessons learned in tech and life.</p>
         {/* Replace with blog post previews */}
         <div className="mt-6 w-full h-60 bg-gray-200 rounded-lg"></div>
+      </section>
+
+      {/* hi crush this is for you */}
+      <section className="relative flex flex-col items-center justify-center min-h-[20vh] bg-pink-200 text-center px-4 py-6 border">
+        {showHeart ? (
+          <div className="flex flex-col items-center animate-pop">
+            <FaHeart size={60} className="text-gray-600" />
+            <p className="mt-4 text-xl font-semibold text-pink-700">you're the one</p>
+          </div>
+        ) : showGoodbye ? (
+          <div className="flex flex-col items-center animate-pop">
+            <p className="text-5xl mb-2">:(</p>
+            <p className="text-xl font-semibold text-red-600">goodbye</p>
+          </div>
+        ) : (
+          <>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-pink-700 mb-4 animate-bounce">do you like me?</h2>
+            <div className="flex gap-8">
+              <button
+                onClick={handleYesClick}
+                className="bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
+              >
+                yes
+              </button>
+              <button
+                onClick={handleNoClick}
+                className="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105"
+              >
+                no
+              </button>
+            </div>
+          </>
+        )}
       </section>
     </div>
   );
