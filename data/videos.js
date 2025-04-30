@@ -10,7 +10,7 @@ export const videos = [
         thumbnail: "/thumbnails/RANDYS_21st-thumbnail.jpg",
         title: " 'randys 21st' ",
         date: "2022",
-        description: "friends, food, fun",
+        description: "fun, food, friends",
         googleDriveLink: "https://drive.google.com/file/d/1AVkk4fWEafHJfdpG4YGE-tlQWJJ_lfqy/view?usp=share_link",
     },
     {

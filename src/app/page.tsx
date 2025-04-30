@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HamburgerMenu from "../../components/hamburgerMenu";
 import { videos } from "../../data/videos";
+import { projects } from "../../data/projects";
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
           </Link>
         </div>
 
+        {/* Save Contact Button */}
         <div className="flex justify-center mt-6">
           <a
             href="/kendrick.vcf"
@@ -49,19 +51,56 @@ export default function Home() {
       </section>
 
       {/* Videos Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center bg-white p-8">
-        <h2 className="text-3xl font-semibold mb-4">Videos</h2>
-        <p className="text-gray-600 text-center max-w-xl">Here’s where I share creative edits, short films, or vlogs I’ve made recently.</p>
-        {/* Replace with dynamic video thumbnails or embeds */}
-        <div className="mt-6 w-full h-60 bg-gray-200 rounded-lg"></div>
+      <section className="min-h-screen bg-gray-100 p-6">
+        <h1 className="text-3xl font-bold text-gray-800 text-center mb-10">videos</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {videos.map((video) => (
+            <Link
+              key={video.title}
+              href={video.googleDriveLink}
+              target="_blank"
+              rel="noreferrer"
+              className="group block"
+            >
+              <div className="bg-gray-50 p-4 rounded-md shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative w-full h-48">
+                  <Image
+                    src={video.thumbnail}
+                    alt={video.title}
+                    fill
+                    className="rounded-md object-cover"
+                  />
+                </div>
+                <h2 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 transition-colors">
+                  {video.title}
+                </h2>
+                <p className="text-sm text-gray-600 mt-1">{video.date}</p>
+                <p className="text-gray-600 mt-2">{video.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* Projects Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center bg-gray-50 p-8">
-        <h2 className="text-3xl font-semibold mb-4">Projects</h2>
-        <p className="text-gray-600 text-center max-w-xl">Some of the stuff I’ve coded — from apps and tools to experiments and side hustles.</p>
-        {/* Replace with dynamic project cards or links */}
-        <div className="mt-6 w-full h-60 bg-gray-200 rounded-lg"></div>
+      <section className="min-h-screen bg-gray-50 p-6">
+        <h1 className="text-3xl font-bold text-gray-800 text-center mb-10">projects</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {projects.map((project) => (
+            <div key={project.name} className="bg-gray-50 p-4 rounded-md shadow-md">
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">{project.name}</h2>
+              <p className="text-gray-600 mb-4">{project.description}</p>
+              <Link
+                href={project.githubLink}
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                view on github
+              </Link>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Posts Section */}

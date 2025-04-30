@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { videos } from "../../../data/videos";
+import { videos } from "@/data/Videos";
 
 export default function Videos() {
   return (
@@ -42,4 +42,4 @@ export default function Videos() {
       </div>
     </div>
   );
-} 
+}
