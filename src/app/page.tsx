@@ -14,8 +14,9 @@ import HamburgerMenu from "../../components/hamburgerMenu";
 import { videos } from "../../data/videos";
 import { projects } from "../../data/projects";
 
+// VCARD contact info
 function downloadContact() {
-  const vCard = `BEGIN:VCARD\nVERSION:3.0\nFN:Kendrick Ngo\nTEL;TYPE=CELL:+1234567890\nEND:VCARD`;
+  const vCard = `BEGIN:VCARD\nVERSION:3.0\nFN:Kendrick Ngo♡\nTEL;TYPE=CELL:+7146220884\nEND:VCARD`;
   const blob = new Blob([vCard], { type: "text/vcard" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
