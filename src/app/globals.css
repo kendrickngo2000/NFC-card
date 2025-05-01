@@ -51,10 +51,10 @@ html {
 
 @keyframes melt {
   0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(100vh) rotate(10deg); opacity: 0; }
+  100% { transform: translateY(100vh) rotate(5deg); opacity: 0; }
 }
 body.melt * {
-  animation: melt 6s ease-in forwards;
+  animation: melt 7s ease-in forwards;
 }
 
 @keyframes fadeToBlack {
