@@ -51,11 +51,11 @@ export default function Home() {
       setDestroyed(true);
     }, 6000);
   }
-
+  // melt
   if (destroyed) {
     return (
       <div className="fixed inset-0 bg-black flex items-center justify-center z-[9999]">
-        <div className="text-center text-white animate-fade-in">
+        <div className="text-center text-white animate-fade-in flex flex-col items-center justify-center">
           <p className="text-5xl mb-4">:(</p>
           <p className="text-2xl font-semibold">goodbye</p>
         </div>
