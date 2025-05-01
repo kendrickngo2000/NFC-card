@@ -61,8 +61,6 @@ export default function Home() {
         <div className="text-center text-white animate-fade-in">
           <p className="text-5xl mb-4">:(</p>
           <p className="text-2xl font-semibold">goodbye</p>
-          <p className="text-sm mt-4 text-gray-400">refresh to try again</p>
-          <p className="text-lg mt-6 text-white">"Thanks for visiting. See you next time!"</p>
         </div>
       </div>
     );
@@ -205,7 +203,8 @@ export default function Home() {
           {showHeart ? (
             <div className="flex flex-col items-center animate-pop">
               <FaHeart size={60} className="text-gray-600" />
-              <p className="mt-4 text-xl font-semibold text-pink-700">you're the one</p>
+              <p className="mt-4 text-xl font-semibold text-pink-700">{`you're the one`}</p>
+
             </div>
           ) : showGoodbye ? (
             <div className="flex flex-col items-center animate-pop">
