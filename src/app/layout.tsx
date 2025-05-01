@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import HamburgerMenu from "../../components/hamburgerMenu";
+import { Analytics } from "@vercel/analytics/react"
 
 
 const jetBrainsMono = JetBrains_Mono({
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={jetBrainsMono.className}>
           {children}
           <HamburgerMenu />
+          <Analytics />
       </body>
     </html>
   );
