@@ -57,7 +57,7 @@ export default function Home() {
       <div className="fixed inset-0 bg-black flex items-center justify-center z-[9999]">
         <div className="text-center text-white animate-fade-in flex flex-col items-center justify-center">
           <p className="text-5xl mb-4">:(</p>
-          <p className="text-2xl font-semibold pl-4">goodbye</p>
+          <p className="text-2xl font-semibold pl-8 sm:pl-12">goodbye</p>
         </div>
       </div>
     );
