@@ -37,11 +37,11 @@ export default function Home() {
 
   // if yes
   function handleYesClick() {
-    setShowHeart(true);
-    downloadContact(); 
+    setShowHeart(true); 
     setTimeout(() => {
       setShowHeart(false);
     }, 4000);
+    downloadContact();
   }
 
   // if no
