@@ -203,28 +203,28 @@ export default function Home() {
             {showHeart ? (
               <div className="flex flex-col items-center justify-center h-full text-center animate-pop">
                 <FaHeart size={50} className="text-gray-600 mb-4" />
-                <p className="text-lg font-semibold text-pink-800">you're the one</p>
+                <p className="text-lg font-semibold text-pink-800">{`you're the one`}</p>
               </div>
             ) : showGoodbye ? (
               <div className="flex flex-col items-center justify-center h-full text-center animate-pop">
                 <p className="text-5xl mb-2">:(</p>
-                <p className="text-9xl font-semibold text-red-600">goodbye</p>
+                <p className="text-9xl font-semibold text-red-600">{`goodbye`}</p>
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center text-center">
-                <h2 className="text-xl font-semibold animate-bounce mb-4">do you like me?</h2>
+                <h2 className="text-xl font-semibold animate-bounce mb-4">{`do you like me?`}</h2>
                 <div className="flex gap-4">
                   <button
                     onClick={handleYesClick}
                     className="bg-teal-500 hover:bg-green-600 text-white px-6 py-2 rounded-full shadow transition"
                   >
-                    yes
+                    {'yes'}
                   </button>
                   <button
                     onClick={handleNoClick}
                     className="bg-orange-300 hover:bg-red-500 text-white px-6 py-2 rounded-full shadow transition"
                   >
-                    no
+                    {'no'}
                   </button>
                 </div>
               </div>
