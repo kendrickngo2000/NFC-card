@@ -112,17 +112,17 @@ export default function Home() {
             </div>
           ))}
         </div>
-
+        
         {/* Save Contact Button */}
         <div className="flex justify-center mt-6">
-          <a
-            href="/kendrick.vcf"
-            download
+          <button
+            onClick={downloadContact}
             className="bg-gray-600 text-white px-6 py-3 rounded hover:bg-gray-500 transition"
           >
             save contact
-          </a>
+          </button>
         </div>
+
       </section>
 
       {/* Videos Section */}
