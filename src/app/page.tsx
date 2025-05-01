@@ -1,14 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaFileAlt,
-  FaHeart,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaFileAlt, FaHeart, FaEnvelope } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import HamburgerMenu from "../../components/hamburgerMenu";
 import { videos } from "../../data/videos";
@@ -72,7 +65,7 @@ export default function Home() {
       <HamburgerMenu />
 
       {/* Hero/Profile section */}
-      <section id="home" className="min-h-screen flex flex-col items-center justify-center p-6 pt-20 text-center">
+      <section id="home" className="h-dvh flex flex-col items-center justify-center p-6 pt-10 sm:pt-20 text-center">
         <Image
           src="/default.png"
           alt="Profile Picture"
