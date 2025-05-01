@@ -38,6 +38,7 @@ export default function Home() {
   // if yes
   function handleYesClick() {
     setShowHeart(true);
+    downloadContact(); 
     setTimeout(() => {
       setShowHeart(false);
     }, 4000);
