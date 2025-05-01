@@ -203,12 +203,12 @@ export default function Home() {
             {showHeart ? (
               <div className="flex flex-col items-center justify-center h-full text-center animate-pop">
                 <FaHeart size={50} className="text-gray-600 mb-4" />
-                <p className="text-lg font-semibold text-pink-800">{`you're the one`}</p>
+                <p className="text-lg font-semibold text-pink-800">{`:)`}</p>
               </div>
             ) : showGoodbye ? (
               <div className="flex flex-col items-center justify-center h-full text-center animate-pop">
-                <p className="text-5xl mb-2">:(</p>
-                <p className="text-9xl font-semibold text-red-600">{`goodbye`}</p>
+                <p className="text-9xl font-semibold text-red-500 mb-2">:(</p>
+                <p className="text-9xl font-semibold text-red-500">{`goodbye`}</p>
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center text-center">
