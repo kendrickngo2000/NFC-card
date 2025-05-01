@@ -207,8 +207,8 @@ export default function Home() {
               </div>
             ) : showGoodbye ? (
               <div className="flex flex-col items-center justify-center h-full text-center animate-pop">
-                <p className="text-9xl font-semibold text-red-500 mb-2">:(</p>
-                <p className="text-9xl font-semibold text-red-500">{`goodbye`}</p>
+                <p className="text-6xl font-semibold text-red-500 mb-2">:(</p>
+                <p className="text-6xl font-semibold text-red-500">{`goodbye`}</p>
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center text-center">
