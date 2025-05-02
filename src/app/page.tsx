@@ -29,6 +29,7 @@ export default function Home() {
   useEffect(() => {
     if (showHeart) {
       const timeout = setTimeout(() => {
+      downloadContact();
       }, 2000);
       return () => clearTimeout(timeout);
     }
@@ -40,7 +41,6 @@ export default function Home() {
     setTimeout(() => {
       setShowHeart(false);
     }, 4000);
-    downloadContact();
   }
 
   // if no
