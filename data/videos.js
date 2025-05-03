@@ -14,7 +14,7 @@ export const videos = [
         googleDriveLink: "https://drive.google.com/file/d/1AVkk4fWEafHJfdpG4YGE-tlQWJJ_lfqy/view?usp=share_link",
     },
     {
-        thumbnail: "",
+        thumbnail: "never-recover.jpg",
         title: " 'never recover' ",
         date: "2021",
         description: "cool choreo janelle",
