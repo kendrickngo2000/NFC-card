@@ -14,6 +14,14 @@ export const videos = [
         googleDriveLink: "https://drive.google.com/file/d/1AVkk4fWEafHJfdpG4YGE-tlQWJJ_lfqy/view?usp=share_link",
     },
     {
+        thumbnail: "",
+        title: " 'never recover' ",
+        date: "2021",
+        description: "cool choreo janelle",
+        googleDriveLink: "https://drive.google.com/file/d/1NQ2x73Ij-8jnN3pbwFeFf2yn8r7YIRtU/view?usp=sharing"
+
+    },
+    {
         thumbnail: "/thumbnails/SD-TRIP-thumbnail.jpg",
         title: " 'sd trip' ",
         date: "2021",
