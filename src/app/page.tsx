@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaInstagram, FaFileAlt, FaHeart, } from "react-icons/fa";
-import { BsEnvelopeHeart } from "react-icons/bs";
+// import { BsEnvelopeHeart } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import HamburgerMenu from "../../components/hamburgerMenu";
 import { videos } from "../../data/videos";
