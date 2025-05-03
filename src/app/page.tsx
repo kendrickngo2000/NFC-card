@@ -187,10 +187,11 @@ export default function Home() {
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
             <button
               onClick={() => setShowLoveNote(true)}
-              className="p-3 rounded-md bg-gray-800 text-gray-200 hover:bg-gray-700 transition shadow font-mono text-sm"
+              className="p-1 rounded-md bg-gray-500 text-gray-200 hover:bg-gray-700 hover:animate-bounce transition shadow font-mono text-sm"
               aria-label="open secret message"
             >
               {/* <BsEnvelopeHeart className="text-white" size={24} /> */}
+              [secret button]
             </button>
           </div>
         </div>
