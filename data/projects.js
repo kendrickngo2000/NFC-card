@@ -1,7 +1,7 @@
 export const projects = [
     {
         name: "scout",
-        description: "analyze your spotify listening habits and trends",
+        description: "analyze spotify user's listening trends and habits",
         githubLink: "https://github.com/kendrickngo2000/scout"
     },
     {
